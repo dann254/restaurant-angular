@@ -1,0 +1,9 @@
+<div>
+    <app-filters></app-filters>
+    <app-restaurant-items
+      *ngIf = "loading == false"
+      [response]= "response"
+      (navigateDestination)="navigateDestination($event)">
+    </app-restaurant-items>
+    <ngx-loading [show]="loading"></ngx-loading>
+</div>

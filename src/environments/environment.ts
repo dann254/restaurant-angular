@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://127.0.0.1:8000/restaurants/',
+  baseUrl: 'http://127.0.0.1:8000/',
+  unsplashUrl: "https://source.unsplash.com/collection/8371842/"
 };
 
 /*

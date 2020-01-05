@@ -1,12 +1,23 @@
 /* Global styles */
+@import '_variables.scss';
 
-// colors
-$blue: #2C7BE5;
-$white: #ffffff;
-$faded-blue: #F9FBFD;
-$darker-red: #D32323;
+// body setup
 
-//fonts
-$font-stack: open-sans, Helvetica, sans-serif;
+body, html {
+  background-color: $faded-blue;
+  font-family: $font-stack;
+}
 
+//secondary
 
+.bg-faded-blue {
+  background-color: $faded-blue;
+}
+
+.text-darker-red {
+  color: $darker-red !important;
+}
+
+.b-radius {
+  border-radius: $border-radius;
+}
