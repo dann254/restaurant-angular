@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <app-restaurant-item
+      *ngFor="let restaurant of restaurants; index as pos"
+      [restaurant]= "restaurant"
+      [imgSelector]= "current"
+      [pos]= "pos">
+    </app-restaurant-item>
+    <app-restaurant-paginator
+      [pageCount]= "pageCount"
+      [current]= "current"
+      (newDestination)="newDestination($event)"
+      >
+    </app-restaurant-paginator>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+@import './../../../_variables.scss';
+
+.restaurant-item {
+  .r-card {
+    height: $card-height;
+    padding: 0;
+    border: 1px;
+    border-style: solid;
+    border-color: $border-color !important;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+
+      .img-container {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        height: 100%;
+        width: $card-height;
+        background: $img-bg;
+
+        img {
+          border-top-left-radius: $border-radius;
+          border-bottom-left-radius: $border-radius;
+          background: $img-bg;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .home-detail {
+        height: $card-height;
+        width: auto;
+        padding: $content-padding;
+
+        .r-name {
+        }
+        .status {
+          align-items: center;
+
+          .status-name {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: lighter;
+          }
+        }
+        .status-icon {
+          margin-right: 3px;
+          vertical-align: middle;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          border: 3px solid $status-grey;
+          background-color: $status-grey;
+
+          &.open{
+            border: 3px solid $status-blue;
+            background-color: $status-blue;
+          }
+        }
+      }
+  }
+}

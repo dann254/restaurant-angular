@@ -1,0 +1,17 @@
+<div class="row my-4 mx-1 restaurant-item">
+  <div class="col-12 bg-white px-0">
+    <div class="r-card d-flex b-radius">
+      <div class="img-container d-inline-block">
+        <img src={{imgUrl}} alt="">
+      </div>
+      <div class="home-detail flex-fill">
+        <h4 class="r-name mb-1">{{restaurant.name}}</h4>
+        <div class="status">
+          <span [ngClass]="setClass()" class="status-icon"></span>
+          <span class="status-name">{{status}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
