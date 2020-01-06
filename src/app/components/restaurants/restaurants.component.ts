@@ -10,6 +10,7 @@ export class RestaurantsComponent implements OnInit {
   loading:boolean = false
   response:any
   pageAttr:string = ''
+  filterAttr:string = ''
   filters:string = ''
 
   constructor(private restaurantService:RestaurantService) { }
@@ -26,6 +27,14 @@ export class RestaurantsComponent implements OnInit {
     this.getRestaurantsRequest()
 
   }
+  filterRestaurants(filters) {
+    this.loading = true
+    this.filterAttr = filters
+    this.pageAttr = `page=1`
+    this.buildFilters()
+    this.getRestaurantsRequest()
+
+  }
 
   getRestaurantsRequest() {
     this.restaurantService.getRestaurants(this.filters).subscribe(restaurants =>{
@@ -35,7 +44,13 @@ export class RestaurantsComponent implements OnInit {
   }
 
   buildFilters() {
-    this.filters = `?${this.pageAttr}`
+    if (this.filterAttr==='') {
+      this.filters = `?${this.pageAttr}`
+      console.log('>>>>>>>>>')
+    }
+    else {
+      this.filters = `?${this.pageAttr}&${this.filterAttr}`
+    }
   }
 
 }

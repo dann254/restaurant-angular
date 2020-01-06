@@ -1,5 +1,41 @@
 <div class="row justify-content-center align-items-center">
-  <div class="col-4 text-center">
-    search and filters
+  <div class="col-12 col-sm-10 col-md-6 text-center py-4">
+    <div class="search-box">
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search.." aria-label="Search" name="searchQuery" [(ngModel)]="searchQuery" (keyup.enter)="onSubmit()">
+          <div class="input-group-append">
+            <button class="btn btn-danger" type="button" (click)="onSubmit()"><fa-icon [icon]="faSearch"></fa-icon></button>
+          </div>
+      </div>
+    </div>
+    <div class="filters d-flex justify-content-around">
+      <div class="filter-item filter-dropdown align-items-start">
+        <div class="dropdown show main-menu">
+          <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [ngClass]="setActiveFilterClass()">
+            {{filterText}}
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item filter-element" href="#" (click)="onFilterClick('', '', '', 'Any time')">Any time</a>
+            <a class="dropdown-item filter-element" href="#" (click)="onFilterClick('True', '', '', 'Open')">Open now</a>
+            <a class="dropdown-item filter-element" href="#" (click)="onFilterClick('False', '', '', 'Closed')">Closed now</a>
+            <div class="dropdown-divider"></div>
+            <a class="filter-element dropdown-item f-weekday" *ngFor="let day of weekdays; index as i;" (mouseenter)="onFilterHover(i)"
+            (mouseleave)="onFilterHoverOff(i)"
+             id={{i}}> <div (click)="onFilterClick('', i+1, '', day)" class="">{{day}}</div>
+              <ul class="sub-menu" [ngClass]="setSuperSubClasses()">
+                <li class="filter-sub-element"
+                (click)="onFilterClick('', i+1, day)" id="{{i}}{{x}}"><span>Any Time</span></li>
+                <li class="filter-sub-element" *ngFor="let hour of hours; index as j;" (click)="onFilterClick('', i+1, hour+':00', day+' '+hour)" id="{{i}}{{j}}"><span>{{hour}} </span></li>
+              </ul>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="filter-item clear-filters align-items-start p-2" [ngClass]="setClearClass()" (click)="onClearFilter()">
+        Clear filters
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </div>
+    </div>
   </div>
 </div>

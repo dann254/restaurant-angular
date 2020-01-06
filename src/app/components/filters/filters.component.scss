@@ -1,0 +1,74 @@
+@import './../../../_variables.scss';
+
+.filter-item {
+  height: 38px;
+  position: relative;
+  cursor: pointer;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  .filter-element {
+    position: relative;
+  }
+  .filter-sub-element {
+    padding-left: 8px;
+
+    &:Hover {
+      background-color: lighten(grey, 40)
+    }
+  }
+  .f-weekday {
+    padding: 0;
+
+    div {
+      padding: .25rem 1.5rem;
+    }
+  }
+}
+.btn-glow {
+  box-shadow: 0 0.75rem 1.5rem rgba(44,123,229,.2) !important;
+}
+.main-menu {
+  // cursor: pointer;
+}
+.clear-filters.filter-active {
+  box-shadow: 0 0.75rem 1.5rem rgba(211,35,35,.2) !important;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-filters {
+  color: $status-grey;
+  cursor:default;
+}
+
+.sub-menu{
+	position: absolute;
+	display: none;
+  z-index: 999;
+  width: 150px;
+  border-radius: 6px;
+  background: white;
+  border: 1px;
+  border-style: solid;
+  border-color: $border-color !important;
+}
+
+
+.current > .sub-filter-show {
+  display:block !important;
+}
+
+.sub-menu {
+	top: 0;
+	right: 0;
+	transform: translate(100%);
+  max-height: 150px;
+  overflow-y: scroll;
+}

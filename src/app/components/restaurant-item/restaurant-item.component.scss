@@ -7,13 +7,29 @@
     border: 1px;
     border-style: solid;
     border-color: $border-color !important;
-    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.1);
 
       .img-container {
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
         height: 100%;
         width: $card-height;
+        background: $img-bg;
+
+        img {
+          border-top-left-radius: $border-radius;
+          border-bottom-left-radius: $border-radius;
+          background: $img-bg;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .mobile-img-container {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        height: 100%;
+        width: 30px;
         background: $img-bg;
 
         img {

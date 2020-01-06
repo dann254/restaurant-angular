@@ -1,5 +1,7 @@
 <div>
-    <app-filters></app-filters>
+    <app-filters
+      (filterRestaurants)="filterRestaurants($event)"
+    ></app-filters>
     <app-restaurant-items
       *ngIf = "loading == false"
       [response]= "response"
