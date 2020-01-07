@@ -1,6 +1,8 @@
 @import './../../../_variables.scss';
 
 .restaurant-item {
+  cursor: pointer;
+
   .r-card {
     height: $card-height;
     padding: 0;
@@ -48,6 +50,19 @@
 
         .r-name {
         }
+        .rating-stars {
+          position: relative;
+          .review-summary {
+            font-size: 12px;
+            height: 30px;
+          }
+          .r-margin {
+            position: absolute;
+            top: 0;
+            margin: 7px 5px;
+          }
+        }
+
         .status {
           align-items: center;
 
@@ -71,6 +86,20 @@
           &.open{
             border: 3px solid $status-blue;
             background-color: $status-blue;
+          }
+        }
+        .reviews {
+          align-items: center;
+
+          .review-name {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: lighter;
+          }
+
+          .review-icon {
+            color: $status-grey;
+            padding-right: 8px;
           }
         }
       }

@@ -9,9 +9,23 @@
       </div>
       <div class="home-detail flex-fill">
         <h4 class="r-name mb-1">{{restaurant.name}}</h4>
-        <div class="status">
+        <div class="rating-stars">
+          <div class="d-inline-block">
+            <app-view-rating
+              [rating]="restaurant.rating_average">
+            </app-view-rating>
+          </div>
+          <span class="review-summary r-margin">{{restaurant.review_count}} reviews</span>
+        </div>
+        <div class="status my-1">
           <span [ngClass]="setClass()" class="status-icon"></span>
           <span class="status-name">{{status}}</span>
+        </div>
+        <div class="reviews my-1">
+          <span class="review-icon">
+            <fa-icon [icon]="faCommentAlt"></fa-icon>
+          </span>
+          <span class="review-name">{{restaurant.review_count}} Review(s)</span>
         </div>
 
       </div>

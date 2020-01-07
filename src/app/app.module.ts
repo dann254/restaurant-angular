@@ -3,7 +3,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,9 @@ import { RestaurantItemsComponent } from './components/restaurant-items/restaura
 import { RestaurantPaginatorComponent } from './components/restaurant-paginator/restaurant-paginator.component';
 import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
 import { PageNotFoundComponent } from './components/error-pages/page-not-found/page-not-found.component';
+import { SubmitRatingsComponent } from './components/submit-ratings/submit-ratings.component';
+import { ViewRatingComponent } from './components/view-rating/view-rating.component';
+import { ViewReviewsComponent } from './components/view-reviews/view-reviews.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +30,18 @@ import { PageNotFoundComponent } from './components/error-pages/page-not-found/p
     RestaurantItemsComponent,
     RestaurantPaginatorComponent,
     RestaurantDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SubmitRatingsComponent,
+    ViewRatingComponent,
+    ViewReviewsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxStarRatingModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.chasingDots,

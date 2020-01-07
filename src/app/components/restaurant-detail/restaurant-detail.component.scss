@@ -5,11 +5,18 @@
   border-radius: $border-radius;
 
   .detail-image {
+    position: relative;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     height: $card-height;
     width: 100%;
     background: $img-bg;
+
+    a {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
 
     img {
       border-top-left-radius: $border-radius;
@@ -30,6 +37,7 @@
       font-weight: lighter;
     }
   }
+
   .status-icon {
     margin-right: 3px;
     vertical-align: middle;
@@ -44,6 +52,25 @@
     &.open{
       border: 3px solid $status-blue;
       background-color: $status-blue;
+    }
+  }
+
+  .review-summary {
+    font-size: 12px;
+  }
+
+  .reviews {
+    align-items: center;
+
+    .review-name {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: lighter;
+    }
+
+    .review-icon {
+      color: $status-grey;
+      padding-right: 8px;
     }
   }
 

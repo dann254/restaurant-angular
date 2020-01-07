@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router'
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-restaurant-item',
@@ -13,6 +14,7 @@ export class RestaurantItemComponent implements OnInit {
   @Input() pos
   @Input() imgSelector
 
+  faCommentAlt = faCommentAlt;
   status:string
   imgUrl:string
   imagerandomizer:number

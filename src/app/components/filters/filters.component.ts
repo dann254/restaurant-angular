@@ -46,9 +46,7 @@ export class FiltersComponent implements OnInit {
 
   filterEmmitter() {
     this.buildFilter()
-    console.log(this.fullFilter)
     this.fullFilter = this.fullFilter.substr(1);
-    console.log(this.fullFilter)
     this.filterRestaurants.emit(this.fullFilter)
   }
 
