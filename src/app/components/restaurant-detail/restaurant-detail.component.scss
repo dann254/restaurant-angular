@@ -1,0 +1,58 @@
+@import './../../../_variables.scss';
+
+.restaurant-detail {
+  background-color: white;
+  border-radius: $border-radius;
+
+  .detail-image {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    height: $card-height;
+    width: 100%;
+    background: $img-bg;
+
+    img {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      background: $img-bg;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .status {
+    align-items: center;
+
+    .status-name {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: lighter;
+    }
+  }
+  .status-icon {
+    margin-right: 3px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid $status-grey;
+    background-color: $status-grey;
+
+    &.open{
+      border: 3px solid $status-blue;
+      background-color: $status-blue;
+    }
+  }
+
+  .table-striped>tbody>tr:nth-child(odd)>td,
+  .table-striped>tbody>tr:nth-child(odd)>th {
+     background-color: lighten($status-blue, 40);
+   }
+   .table-striped>tbody>tr:nth-child(even)>td,
+   .table-striped>tbody>tr:nth-child(even)>th {
+      background-color: lighten($status-blue, 30);
+    }
+}
