@@ -46,7 +46,6 @@ export class RestaurantsComponent implements OnInit {
   buildFilters() {
     if (this.filterAttr==='') {
       this.filters = `?${this.pageAttr}`
-      console.log('>>>>>>>>>')
     }
     else {
       this.filters = `?${this.pageAttr}&${this.filterAttr}`

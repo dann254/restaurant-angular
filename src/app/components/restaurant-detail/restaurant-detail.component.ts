@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from '../../services/restaurant.service'
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -9,6 +10,7 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./restaurant-detail.component.scss']
 })
 export class RestaurantDetailComponent implements OnInit {
+  faCommentAlt = faCommentAlt;
   slug:string
   loading:boolean = false
   restaurant:any
@@ -22,11 +24,10 @@ export class RestaurantDetailComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true
-    this.slug = this.route.snapshot.paramMap.get('slug')
-    this.getRestaurantRequest()
-
     let imagerandomizer = Math.floor(Math.random() * 612)
     this.imgUrl = this.imageUrl + "800x150/?sig=" + imagerandomizer
+    this.slug = this.route.snapshot.paramMap.get('slug')
+    this.getRestaurantRequest()
 
   }
 
@@ -51,6 +52,10 @@ export class RestaurantDetailComponent implements OnInit {
     timeString = h + timeString.substr(2, 3) + ampm;
 
     return timeString
+  }
+  refreshDetail() {
+    this.loading = true
+    this.getRestaurantRequest()
   }
 
   setClass() {

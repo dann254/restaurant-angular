@@ -1,0 +1,22 @@
+.ratings-view {
+  padding: 0px 12px;
+
+  .star {
+    display: inline;
+    height: 30px;
+    width: 30px;
+
+    &.star-full {
+      background-image: url('../../../assets/star.svg');
+      background-repeat: no-repeat;
+    }
+    &.star-half {
+      background-image: url('../../../assets/star-half.svg');
+      background-repeat: no-repeat;
+    }
+    &.star-empty {
+      background-image: url('../../../assets/star-outline.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
