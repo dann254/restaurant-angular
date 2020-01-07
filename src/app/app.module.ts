@@ -13,6 +13,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { RestaurantItemComponent } from './components/restaurant-item/restaurant-item.component';
 import { RestaurantItemsComponent } from './components/restaurant-items/restaurant-items.component';
 import { RestaurantPaginatorComponent } from './components/restaurant-paginator/restaurant-paginator.component';
+import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
+import { PageNotFoundComponent } from './components/error-pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RestaurantPaginatorComponent } from './components/restaurant-paginator/
     FiltersComponent,
     RestaurantItemComponent,
     RestaurantItemsComponent,
-    RestaurantPaginatorComponent
+    RestaurantPaginatorComponent,
+    RestaurantDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

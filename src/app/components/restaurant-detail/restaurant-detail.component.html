@@ -1,0 +1,32 @@
+<div class="row mx-1 justify-content-center">
+  <div class="col-12 col-md-10 restaurant-detail p-0" *ngIf = "loading == false">
+    <div class="detail-image">
+      <img src="{{imgUrl}}" alt="">
+    </div>
+    <div class="row p-5">
+      <div class="col-12 col-md-6">
+        <h3>{{restaurant.name}}</h3>
+        <div class="status">
+          <span [ngClass]="setClass()" class="status-icon"></span>
+          <span class="status-name">{{status}}</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <table class="table table-striped table-sm table-primary">
+          <thead>
+            <tr>
+              <th scope="col" colspan="2">Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let schedule of restaurant.schedules;">
+              <td>{{schedule.weekday.day}}</td>
+              <td>{{convertTime(schedule.opening_time)}} - {{convertTime(schedule.closing_time)}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ngx-loading [show]="loading"></ngx-loading>
+</div>

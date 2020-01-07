@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-restaurant-item',
@@ -15,7 +16,8 @@ export class RestaurantItemComponent implements OnInit {
   status:string
   imgUrl:string
   imagerandomizer:number
-  constructor() { }
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
     this.imagerandomizer = ((this.pos+1)*this.imgSelector) * 612
@@ -26,6 +28,10 @@ export class RestaurantItemComponent implements OnInit {
     } else {
       this.status = "closed"
     }
+  }
+
+  restaurantClick(restaurant) {
+    this.router.navigate(['/restaurants', restaurant.slug])
   }
 
   setClass() {

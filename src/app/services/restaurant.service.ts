@@ -17,4 +17,8 @@ export class RestaurantService {
     this.filters = filters
     return this.http.get(`${this.apiUrl}${this.restaurantsEndpoint}${this.filters}`);
   }
+
+  getRestaurant(slug):Observable<any> {
+    return this.http.get(`${this.apiUrl}${this.restaurantsEndpoint}${slug}`);
+  }
 }
