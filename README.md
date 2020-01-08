@@ -3,6 +3,8 @@
 # Restaurants - [Angular]
 Know restaurant schedules and review restaurants you've visited.
 
+![Mockup](../assets/smartmockups_k5507ult.png?raw=true)
+
 ### Relevant Links
 - [mockups](https://www.figma.com/file/3bo2TxnLYgNa9aL9lkih6n/Restaurants)
 - [staging](https://rest-aurants.herokuapp.com/)
