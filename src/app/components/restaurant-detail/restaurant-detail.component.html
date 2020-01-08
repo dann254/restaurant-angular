@@ -9,7 +9,7 @@
         <h3>{{restaurant.name}}</h3>
 
         <app-view-rating [rating]="restaurant.rating_average"></app-view-rating>
-        <span class="review-summary">{{restaurant.review_count}} ratings</span>
+        <span class="review-summary"> <span class="text-muted">rated</span> {{restaurant.rating_average}} <span class="text-muted">from </span>{{restaurant.review_count}} <span class="text-muted">reviews</span></span>
         <hr>
         <div class="status py-1">
           <span [ngClass]="setClass()" class="status-icon"></span>

@@ -26,9 +26,9 @@ export class RestaurantItemComponent implements OnInit {
 
     this.imgUrl = this.imageUrl + "150x150/?sig=" + this.imagerandomizer
     if (this.restaurant.open) {
-      this.status = "open"
+      this.status = "Open"
     } else {
-      this.status = "closed"
+      this.status = "Closed"
     }
   }
 

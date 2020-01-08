@@ -6,8 +6,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content m-style">
         <div class="modal-header">
-          <h5 class="modal-title" id="reviewModalLabel">Rate and Review: {{restaurant.name}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="reviewModalLabel">{{restaurant.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="clearModal()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -16,17 +16,17 @@
             <div class="star-rating-input form-group">
               <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
             </div>
-            <div class="">Rating: {{form.value.rating}}</div>
+            <div class="text-muted">Rating: {{form.value.rating}}</div>
           </form>
-            <hr size="30">
+            <hr size="30" class="border-c">
             <div class="form-group">
               <label for="exampleInputPassword1">Write a Review</label><span *ngIf="reviewRequired" class="text-danger ml-2">review required</span>
-              <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="review" rows="3" (keyup.enter)="submitRating()" required></textarea>
+              <textarea class="form-control review-area" id="exampleFormControlTextarea1" [(ngModel)]="review" rows="6" (keyup.enter)="submitRating()" required></textarea>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" disabled>Login (coming-soon)</button>
-          <button (click)="submitRating()" type="button" class="btn btn-danger">Review as anonymous</button>
+            <div class="row justify-content-around">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" disabled>Login (coming-soon)</button>
+              <button (click)="submitRating()" type="button" class="btn btn-danger">Anonymous review</button>
+            </div>
         </div>
       </div>
     </div>

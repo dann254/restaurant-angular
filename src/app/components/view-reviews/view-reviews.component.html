@@ -2,7 +2,7 @@
   <div class="col-12">
     <h4>Reviews</h4>
     <hr>
-    <div *ngIf="reviews.length > 1">
+    <div *ngIf="reviews.length > 1; else noReviews">
       <div *ngFor="let review of reviews;">
         <div class="row">
           <div class="col text-bold">
@@ -18,5 +18,15 @@
         <hr>
       </div>
     </div>
+    <ng-template #noReviews>
+      <div class="card card-inactive">
+        <div class="card-body text-center">
+          <!-- Title -->
+          <h5 class="mt-0 text-muted">
+            No Reviews Yet
+          </h5>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>

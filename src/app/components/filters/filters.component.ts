@@ -63,7 +63,7 @@ export class FiltersComponent implements OnInit {
       this.fullFilter = `${this.fullFilter}&time=${this.hour}`
     }
     if (this.searchQuery !== '') {
-      this.fullFilter = `${this.fullFilter}&search=${this.searchQuery}`
+      this.fullFilter = `${this.fullFilter}&search_q=${this.searchQuery}`
     }
 
     if (this.fullFilter === '')
