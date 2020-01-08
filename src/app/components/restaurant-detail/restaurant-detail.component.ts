@@ -37,9 +37,9 @@ export class RestaurantDetailComponent implements OnInit {
       this.loading = false
 
       if (this.restaurant.open) {
-        this.status = "Open"
+        this.status = "Open • Closes"
       } else {
-        this.status = "Closed"
+        this.status = "Closed • Opens"
       }
     })
   }
@@ -53,6 +53,7 @@ export class RestaurantDetailComponent implements OnInit {
 
     return timeString
   }
+
   refreshDetail() {
     this.loading = true
     this.getRestaurantRequest()

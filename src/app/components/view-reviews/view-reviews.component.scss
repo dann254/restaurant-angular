@@ -1,7 +1,14 @@
+@import './../../../_variables.scss';
+
 .card-inactive {
     border-style: dashed;
     border-color: #e3ebf6;
     background-color: transparent;
     box-shadow: none;
     margin-bottom: 1.5rem;
+}
+
+.comment-container {
+  border-radius: $border-radius;
+  background-color: $faded-blue;
 }

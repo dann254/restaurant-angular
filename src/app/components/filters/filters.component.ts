@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { faSearch, faCaretDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faCaretRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 declare var $:any;
 
 @Component({
@@ -11,7 +11,7 @@ export class FiltersComponent implements OnInit {
   @Output() filterRestaurants: EventEmitter<any> = new EventEmitter()
 
   faSearch = faSearch;
-  faCaretDown = faCaretDown;
+  faCaretRight = faCaretRight;
   faTimes = faTimes;
   fullFilter:string = ''
   searchQuery:string = ''

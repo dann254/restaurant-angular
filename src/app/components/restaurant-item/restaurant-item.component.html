@@ -15,17 +15,17 @@
               [rating]="restaurant.rating_average">
             </app-view-rating>
           </div>
-          <span class="review-summary r-margin"> {{restaurant.review_count}} raviews</span>
+          <span class="review-summary r-margin"> • {{restaurant.review_count}} reviews</span>
         </div>
-        <div class="status mb-1">
+        <div class="status mb-2">
           <span [ngClass]="setClass()" class="status-icon"></span>
-          <span class="status-name">{{status}}</span>
+          <span class="status-name text-muted">{{status}} {{convertTime(restaurant.schedule_change)}}</span>
         </div>
         <div class="reviews my-1">
           <span class="review-icon">
             <fa-icon [icon]="faCommentAlt"></fa-icon>
           </span>
-          <span class="review-name">{{restaurant.review_count}} Review(s)</span>
+          <span class="review-name  text-muted">{{restaurant.review_count}} Review(s)</span>
         </div>
 
       </div>

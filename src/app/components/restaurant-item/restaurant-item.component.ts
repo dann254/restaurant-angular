@@ -26,10 +26,20 @@ export class RestaurantItemComponent implements OnInit {
 
     this.imgUrl = this.imageUrl + "150x150/?sig=" + this.imagerandomizer
     if (this.restaurant.open) {
-      this.status = "Open"
+      this.status = "Open • Closes"
     } else {
-      this.status = "Closed"
+      this.status = "Closed • Opens"
     }
+  }
+
+  convertTime(time) {
+    let timeString = time;
+    let H = +timeString.substr(0, 2);
+    let h = H % 12 || 12;
+    let ampm = (H < 12 || H === 24) ? "am" : "pm";
+    timeString = h + timeString.substr(2, 3) + ampm;
+
+    return timeString
   }
 
   restaurantClick(restaurant) {

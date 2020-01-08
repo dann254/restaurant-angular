@@ -22,7 +22,7 @@
             <div class="dropdown-divider"></div>
             <a class="filter-element dropdown-item f-weekday" *ngFor="let day of weekdays; index as i;" (mouseenter)="onFilterHover(i)"
             (mouseleave)="onFilterHoverOff(i)"
-             id={{i}}> <div (click)="onFilterClick('', i+1, '', day)" class="">{{day}}</div>
+             id={{i}}> <div (click)="onFilterClick('', i+1, '', day)" class="">{{day}} <span class="dr-caret text-muted"><fa-icon [icon]="faCaretRight"></fa-icon></span></div>
               <ul class="sub-menu" [ngClass]="setSuperSubClasses()">
                 <li class="filter-sub-element"
                 (click)="onFilterClick('', i+1, '', day)" id="{{i}}{{'x'}}"><span>Any Time</span></li>

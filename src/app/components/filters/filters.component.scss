@@ -15,6 +15,12 @@
   .filter-element {
     position: relative;
   }
+
+  .dr-caret{
+    position: absolute;
+    right: 8px;
+  }
+
   .filter-sub-element {
     padding-left: 8px;
 
@@ -74,6 +80,6 @@
 	top: 0;
 	right: 0;
 	transform: translate(100%);
-  max-height: 150px;
+  max-height: 300px;
   overflow-y: scroll;
 }
