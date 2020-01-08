@@ -21,6 +21,7 @@
       *ngIf="response.count !== 0;"
       [pageCount]= "pageCount"
       [current]= "current"
+      [totalRestaurants]= "response.count"
       (newDestination)="newDestination($event)"
       >
     </app-restaurant-paginator>
