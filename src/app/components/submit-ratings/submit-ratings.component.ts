@@ -33,6 +33,13 @@ export class SubmitRatingsComponent implements OnInit {
     this.slug = this.restaurant.slug
   }
 
+  clearModal() {
+    this.form = this.fb.group({
+      rating: [this.ratings, Validators.required],
+    })
+    this.review = ''
+  }
+
   submitRating() {
     this.ratings = this.form.value.rating
 

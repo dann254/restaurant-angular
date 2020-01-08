@@ -1,5 +1,16 @@
 <div class="row justify-content-center">
   <div class="col-12 col-md-10">
+    <ng-container
+      *ngIf="response.count === 0;">
+      <div class="card card-inactive">
+        <div class="card-body text-center">
+          <!-- Title -->
+          <h5 class="mt-0 text-muted">
+            No Results
+          </h5>
+        </div>
+      </div>
+    </ng-container>
     <app-restaurant-item
       *ngFor="let restaurant of restaurants; index as pos"
       [restaurant]= "restaurant"
@@ -7,6 +18,7 @@
       [pos]= "pos">
     </app-restaurant-item>
     <app-restaurant-paginator
+      *ngIf="response.count !== 0;"
       [pageCount]= "pageCount"
       [current]= "current"
       (newDestination)="newDestination($event)"
