@@ -21,5 +21,4 @@ before_script:
   - sudo dpkg -i google-chrome*.deb
 
 script:
-  - ng lint
   - ng test --watch false -cc
