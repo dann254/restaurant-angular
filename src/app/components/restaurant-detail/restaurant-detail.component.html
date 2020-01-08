@@ -13,13 +13,13 @@
         <hr>
         <div class="status py-1">
           <span [ngClass]="setClass()" class="status-icon"></span>
-          <span class="status-name">{{status}}</span>
+          <span class="status-name text-muted">{{status}} {{convertTime(restaurant.schedule_change)}}</span>
         </div>
         <div class="reviews pt-1 pb-4">
           <span class="review-icon">
             <fa-icon [icon]="faCommentAlt"></fa-icon>
           </span>
-          <span class="review-name">{{restaurant.review_count}} Review(s)</span>
+          <span class="review-name  text-muted">{{restaurant.review_count}} Review(s)</span>
         </div>
         <app-submit-ratings
           [restaurant]= "restaurant"
