@@ -14,8 +14,7 @@ export class ViewReviewsComponent implements OnInit {
   }
   reviewDate(day){
     let d = new Date(day)
-    let datestring = d.getDate() + '-' +  (d.getMonth()+1) + '-' + d.getFullYear()
-    return datestring
+    return d.toDateString()
   }
 
 }
