@@ -1,4 +1,16 @@
 <div class="row mx-1 justify-content-center">
+  <div *ngIf="redeemed == false" class="modal fade" id="hazinaModal" tabindex="-1" role="dialog" aria-labelledby="hazinaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered hazina-modal" role="document">
+      <div class="modal-content m-style">
+        <div class="modal-body">
+          <div class="row d-flex justify-content-center">
+            <iframe id='moja-hazina' src='https://hazina.stg.brck.io/?quest=e05455f7-7cf7-4984-9146-30ee90e74505' name='moja-hazina' sandbox='allow-forms allow-modals allow-scripts allow-popups' loading='eager' style='border:none; height:180px; overflow:hidden; width: 350px; background-color:white;'> </iframe>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="col-12 col-md-10 restaurant-detail p-0" *ngIf = "loading == false">
     <div class="detail-image">
       <a class="btn btn-primary btn-back" routerLink="/">Back</a>
@@ -23,6 +35,7 @@
         </div>
         <app-submit-ratings
           [restaurant]= "restaurant"
+          [redeemed]= "redeemed"
           (refreshDetail)="refreshDetail()">
         </app-submit-ratings>
 
