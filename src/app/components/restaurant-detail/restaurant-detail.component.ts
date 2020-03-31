@@ -30,9 +30,8 @@ export class RestaurantDetailComponent implements OnInit {
     let imagerandomizer = Math.floor(Math.random() * 612)
     this.imgUrl = this.imageUrl + "800x150/?sig=" + imagerandomizer
     this.slug = this.route.snapshot.paramMap.get('slug')
-    this.getRestaurantRequest()
-
     this.checkcookie()
+    this.getRestaurantRequest()
   }
 
   getRestaurantRequest() {
@@ -75,10 +74,12 @@ export class RestaurantDetailComponent implements OnInit {
   }
 
   redeemModal(){
-    if (this.showHazina && this.restaurant.name === 'Kushi Tsuru'){
-      $('#hazinaModal').modal('show');
-      localStorage.setItem('redeemed', 'true');
-      this.redeemed = true
+    if (!this.redeemed){
+      if (this.showHazina && this.restaurant.name === 'Kushi Tsuru'){
+        $('#hazinaModal').modal('show');
+        localStorage.setItem('redeemed', 'true');
+        this.redeemed = true
+      }
     }
   }
   
