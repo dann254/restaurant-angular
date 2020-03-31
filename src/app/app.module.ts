@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -52,7 +52,7 @@ import { ViewReviewsComponent } from './components/view-reviews/view-reviews.com
       tertiaryColour: '#ffffff'
     })
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

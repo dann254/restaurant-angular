@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from '../../services/restaurant.service'
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '../../../environments/environment';
+declare var $:any;
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -18,6 +19,8 @@ export class RestaurantDetailComponent implements OnInit {
   imagerandomizer:number
   imageUrl = environment.unsplashUrl
   status:string
+  showHazina:boolean = false
+  redeemed:boolean = false
 
 
   constructor(private route: ActivatedRoute, private restaurantService:RestaurantService) { }
@@ -29,6 +32,7 @@ export class RestaurantDetailComponent implements OnInit {
     this.slug = this.route.snapshot.paramMap.get('slug')
     this.getRestaurantRequest()
 
+    this.checkcookie()
   }
 
   getRestaurantRequest() {
@@ -41,7 +45,17 @@ export class RestaurantDetailComponent implements OnInit {
       } else {
         this.status = "Closed • Opens"
       }
+      this.redeemModal()
     })
+  }
+
+  checkcookie(){
+    if (localStorage.getItem("redeemed") !== null) {
+      this.redeemed = true
+    }
+    else {
+      this.redeemed = false
+    }
   }
 
   convertTime(time) {
@@ -57,7 +71,17 @@ export class RestaurantDetailComponent implements OnInit {
   refreshDetail() {
     this.loading = true
     this.getRestaurantRequest()
+    this.showHazina = true
   }
+
+  redeemModal(){
+    if (this.showHazina && this.restaurant.name === 'Kushi Tsuru'){
+      $('#hazinaModal').modal('show');
+      localStorage.setItem('redeemed', 'true');
+      this.redeemed = true
+    }
+  }
+  
 
   setClass() {
     let classes = {
