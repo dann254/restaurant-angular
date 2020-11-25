@@ -2,7 +2,7 @@
   <div class="col-12">
     <h4>Reviews</h4>
     <hr>
-    <div *ngIf="reviews.length > 0; else noReviews">
+    <div *ngIf="reviews.length >= 0; else noReviews">
       <div *ngFor="let review of reviews;">
         <div class="row">
           <div class="col text-bold">
