@@ -14,6 +14,7 @@ declare var $:any;
 export class SubmitRatingsComponent implements OnInit {
   public form: FormGroup;
   @Input() restaurant
+  @Input() redeemed
   @Output() refreshDetail: EventEmitter<any> = new EventEmitter()
   loading:boolean = false
   ratings:number = 0
