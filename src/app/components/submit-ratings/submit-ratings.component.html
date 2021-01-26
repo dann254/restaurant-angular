@@ -2,6 +2,7 @@
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reviewModal">
      <fa-icon [icon]="faCommentAlt"></fa-icon> Write a review
   </button>
+  <div class="text-muted small" *ngIf="(restaurant.name == 'Kushi Tsuru' && !redeemed)"> *Review to earn 5 <a href="https://www.brck.com/moja/" target="_blank">moja points.</a> </div>
   <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content m-style">
